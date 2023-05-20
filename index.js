@@ -9,4 +9,6 @@ function requestController (req, res) {
 
 }
 
-server.listen(3001)
+server.listen(3001, () => {
+    console.log("Servidor en ejecución")
+})
