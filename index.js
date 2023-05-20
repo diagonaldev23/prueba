@@ -5,8 +5,10 @@ const server = http.createServer(requestController)
 
 // Configurar nuestro servidor
 function requestController (req, res) {
-    res.send("<h1>Hola Mundo desde render</h1>");
-    res.end();
+    console.log('Hello, World desde RENDER!')
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('<h1>Hello, World desde RENDER!</h1>')
 
 }
 
