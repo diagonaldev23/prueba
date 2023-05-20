@@ -4,7 +4,8 @@ const server = http.createServer(requestController)
 
 // Configurar nuestro servidor
 function requestController (req, res) {
-    console.log("hola")
+    res.send("<h1>Hola Mundo desde render</h1>");
+    res.end();
 
 }
 
