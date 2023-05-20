@@ -1,0 +1,14 @@
+{
+  "name": "inicio_05_2023",
+  "version": "1.0.0",
+  "description": "Introduccion al desarrollo full-stack",
+  "main": "index.js",
+  "author": "Gonzalo Clara Perez",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
