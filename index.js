@@ -1,3 +1,4 @@
+require('dotenv').config()
 const http = require('http')
 
 const server = http.createServer(requestController)
@@ -9,6 +10,8 @@ function requestController (req, res) {
 
 }
 
-server.listen(3001, () => {
-    console.log("Servidor en ejecución")
+const PORT = process.env.PORT || 4000
+
+server.listen(PORT, () => {
+    console.log("Servidor en ejecución en el puerto", PORT)
 })
