@@ -56,7 +56,7 @@ app.post("/api/tasks", (req, res) => {
         tareas.tareas.push(nuevaTarea);
       
         // Escribir el contenido actualizado en el archivo
-        fs.writeFile('tareas.json', JSON.stringify(tareas), 'utf8', (err) => {
+        fs.writeFile('./tareas.json', JSON.stringify(tareas), 'utf8', (err) => {
           if (err) {
             console.error('Error al agregar la tarea:', err);
             return;
