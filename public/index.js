@@ -10,7 +10,7 @@ getBtn.addEventListener('click', async () => {
     console.log('GET TAREAS')
     let data = ''
     try {
-        const response = await fetch('http://localhost:4000/api/tasks')
+        const response = await fetch('https://emprende-back-nqtq.onrender.com/api/tasks')
         if(!response.ok) {
             throw new Error('Error al obtener datos')
         }
@@ -39,7 +39,7 @@ getBtn.addEventListener('click', async () => {
 createBtn.addEventListener('click', async () => {
     console.log('CREATE TAREAS')
     console.log({input})
-    fetch('http://localhost:4000/api/tasks', {
+    fetch('https://emprende-back-nqtq.onrender.com/api/tasks', {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({text: input.value})
