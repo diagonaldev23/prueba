@@ -21,10 +21,16 @@ getBtn.addEventListener('click', async () => {
         console.error(error)
     }
 
-    const respuesta = document.createElement('div')
     data.forEach(element => {
         
-        respuesta.textContent = element.fecha
+        const respuesta = document.createElement('div')
+        respuesta.innerHTML = `
+        <h2>${element.titulo}</h2>
+        <p>${element.descripcion}</p>
+        <p>Estado: ${element.estado}</p>
+        <p>Fecha de creación: ${element.fechaCreacion}</p>
+        <p>Fecha límite: ${element.fechaLimite}</p>
+      `;
         document.querySelector('body').appendChild(respuesta)
     });
     

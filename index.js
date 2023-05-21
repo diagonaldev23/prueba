@@ -1,4 +1,5 @@
 require('dotenv').config()
+const fs = require('fs');
 const express = require('express')
 const app = express()
 
@@ -24,12 +25,45 @@ app.get('/users', (req, res) => {
 })
 
 app.get('/api/tasks', (req, res) => {
-    res.json([{fecha: "20/05/2023", todo: "Compras"},{fecha: "20/05/2023", todo: "Cocinar"}, {fecha: "20/05/2023", todo: "Estudiar"}])
+    const data = require('./tareas.json')
+    console.log(data. tareas)
+    res.json(data.tareas)
   })
 
 app.post("/api/tasks", (req, res) => {
     const body = req.body
     console.log(body)
+    fs.readFile('./tareas.json', 'utf8', (err, data) => {
+        if (err) {
+          console.error('Error al leer el archivo:', err);
+          return;
+        }
+      
+        // Parsear el contenido JSON en un objeto JavaScript
+        const tareas = JSON.parse(data);
+      
+        // Crear la nueva tarea
+        const nuevaTarea = {
+          id: 5,
+          titulo: body.text,
+          descripcion: 'Realizar ejercicio físico durante 30 minutos',
+          estado: 'pendiente',
+          fechaCreacion: '2023-05-22',
+          fechaLimite: '2023-05-25'
+        };
+      
+        // Agregar la nueva tarea al arreglo de tareas existentes
+        tareas.tareas.push(nuevaTarea);
+      
+        // Escribir el contenido actualizado en el archivo
+        fs.writeFile('tareas.json', JSON.stringify(tareas), 'utf8', (err) => {
+          if (err) {
+            console.error('Error al agregar la tarea:', err);
+            return;
+          }
+          console.log('Nueva tarea agregada correctamente.');
+        });
+      });
     res.status(201).json({ok: true, message: 'Tarea creada con éxito'})
 })
 
