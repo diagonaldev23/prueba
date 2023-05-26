@@ -1,7 +1,30 @@
 .title {
-    font-size: 24;
-    font-family: Arial, Helvetica, sans-serif;
-    text-shadow: gold;
-    text-decoration: dotted;
-    color: red;
+  font-size: 24;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: gold;
+  text-decoration: dotted;
+  color: red;
+}
+
+.container-div {
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 10px;
+}
+
+.button {
+  background-color: green;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 25;
+  font-weight: bold;
+  cursor: pointer;
+  max-height: 40px;
+  padding: 5px;
+}
+
+.button-red {
+  background-color: red;
 }
