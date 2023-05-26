@@ -9,7 +9,7 @@ const tasksContainer = document.querySelector('#tasks-container');
 let TASK_TO_EDIT = null;
 
 console.log(window);
-const baseURL = '/api';
+const baseURL = `${window.origin}/api`;
 
 createEditBtn.addEventListener('click', async () => {
   const creating = !TASK_TO_EDIT;
